@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_main"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+    
+    <View
+        android:id="@+id/v_main"
+        app:layout_constraintTop_toTopOf="@id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bg_dirver"/>
+    <RadioGroup
+        android:id="@+id/rg_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/bg_white"
+        android:padding="5dp">
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/house"
+            style="@style/HomeTabStyle"
+            android:drawableTop="@drawable/main_house"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/rb_community"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/community"
+            style="@style/HomeTabStyle"
+            android:drawableTop="@drawable/main_community"
+            />
+        <RadioButton
+            android:id="@+id/rb_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notice"
+            style="@style/HomeTabStyle"
+            android:drawableTop="@drawable/main_notice"
+            />
+        <RadioButton
+            android:id="@+id/rb_mine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mine"
+            style="@style/HomeTabStyle"
+            android:drawableTop="@drawable/main_mine"
+            />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
