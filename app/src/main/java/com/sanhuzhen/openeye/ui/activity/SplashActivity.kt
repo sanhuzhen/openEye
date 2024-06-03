@@ -28,10 +28,10 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>() {
             startActivity(Intent(this@SplashActivity,MainActivity::class.java))
             finish()
         }
-        countDownTimer = object : CountDownTimer(3000, 1000) {
+        countDownTimer = object : CountDownTimer(4000, 1000) {
             @SuppressLint("SetTextI18n", "ResourceAsColor")
             override fun onTick(millisUntilFinished: Long) {
-                binding.tvSplash.text = "跳过,${millisUntilFinished / 1000}s"
+                binding.tvSplash.text = "${millisUntilFinished / 1000}s,跳过"
             }
             override fun onFinish() {
                 startActivity(Intent(this@SplashActivity,MainActivity::class.java))

@@ -1,3 +1,5 @@
 package com.sanhuzhen.openeye.bean
 
-class HotWordData : ArrayList<String>()
+/**
+ * 对热词的数据类
+ */
