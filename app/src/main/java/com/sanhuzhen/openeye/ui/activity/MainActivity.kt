@@ -82,6 +82,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         transaction.commitAllowingStateLoss()
     }
 
+    //隐藏所有fragment
     private fun hideFragment() {
         val transaction = supportFragmentManager.beginTransaction()
         for (f in mFragments) {
