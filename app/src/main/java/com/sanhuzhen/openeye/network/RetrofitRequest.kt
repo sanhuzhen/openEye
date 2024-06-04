@@ -1,6 +1,7 @@
 package com.sanhuzhen.openeye.network
 
 import com.sanhuzhen.openeye.api.ApiService
+import com.sanhuzhen.openeye.bean.Data
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -19,8 +20,19 @@ object RetrofitRequest {
         .build()
     private val apiService = retrofit.create(ApiService::class.java)
 
+    /**
+     * 对热词进行网络请求
+     */
     fun getHotWord(): Observable<List<String>> {
         return apiService.getHotWord()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
+    /**
+     * 对分类列表进行网络请求
+     */
+    fun getCategoryList(): Observable<List<Data>> {
+        return apiService.getCategoryList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }

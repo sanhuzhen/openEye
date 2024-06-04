@@ -39,18 +39,13 @@ abstract class BaseLazyFragment<VB: ViewBinding>: Fragment() {
         binding = initBinding()
         return binding.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        onFirstVisibleToUser()
-    }
     override fun onResume() {
         super.onResume()
         if (isFirstVisible) {
-            initPrepare();
-            isFirstVisible = false;
+            initPrepare()
+            isFirstVisible = false
         } else {
-            onVisibleToUser();
+            onVisibleToUser()
         }
     }
 

@@ -1,51 +1,39 @@
 package com.sanhuzhen.openeye.adapter
 
-import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sanhuzhen.openeye.R
 
+class HotWordRvAdapter(context: Context):
+    RecyclerView.Adapter<HotWordRvAdapter.HotWordViewHolder>() {
 
-class HotWordRvAdapter :
-    ListAdapter<List<String>, HotWordRvAdapter.HotWordViewHolder>(object :
-        DiffUtil.ItemCallback<List<String>>() {
-        override fun areItemsTheSame(oldItem: List<String>, newItem: List<String>): Boolean {
-            return oldItem == newItem
+        private var hotWords: List<String> = listOf()
+
+    fun setData(data: List<String>){
+        hotWords = data
+        notifyDataSetChanged()
+    }
+    inner class HotWordViewHolder(itemView: android.view.View) : RecyclerView.ViewHolder(itemView) {
+        val tv: TextView = itemView.findViewById(R.id.rv_search_tv)
+        fun bind(position: Int) {
+            tv.text = hotWords[position]
         }
-
-        @SuppressLint("DiffUtilEquals")
-        override fun areContentsTheSame(oldItem: List<String>, newItem: List<String>): Boolean {
-            return oldItem == newItem
-        }
-
-    }) {
-    private var HotWords: List<String>? = null
-    override fun onBindViewHolder(holder: HotWordViewHolder, position: Int) {
-        holder.bind(position)
     }
 
-    fun setData(hotWords: List<String>) {
-        HotWords = hotWords
-    }
-
-    override fun onCreateViewHolder(
-        parent: android.view.ViewGroup,
-        viewType: Int
-    ): HotWordViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotWordViewHolder {
         return HotWordViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.rv_search_normal_type, parent, false)
         )
     }
 
-    inner class HotWordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tv: TextView = itemView.findViewById(R.id.rv_search_tv)
-        fun bind(position: Int) {
-            tv.text = HotWords!![position]
-        }
+    override fun getItemCount(): Int = hotWords.size
+
+    override fun onBindViewHolder(holder: HotWordViewHolder, position: Int) {
+        holder.bind(position)
     }
+
 }

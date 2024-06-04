@@ -1,6 +1,5 @@
 package com.sanhuzhen.openeye.ui.fragment.search
 
-import androidx.fragment.app.Fragment
 import com.sanhuzhen.openeye.base.BaseLazyFragment
 import com.sanhuzhen.openeye.databinding.FragmentAfterBinding
 
