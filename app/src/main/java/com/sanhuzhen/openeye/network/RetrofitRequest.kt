@@ -31,7 +31,7 @@ object RetrofitRequest {
     /**
      * 对分类列表进行网络请求
      */
-    fun getCategoryList(): Observable<List<Data>> {
+    fun getCategoryList(): Observable<List> {
         return apiService.getCategoryList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
