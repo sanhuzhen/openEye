@@ -15,5 +15,5 @@ interface ApiService {
      * 获取分类列表
      */
     @GET("category/list")
-    fun getCategoryList(): Observable<Item>
+    fun getCategoryList(): Observable<List<Data>>
 }

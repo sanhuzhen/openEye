@@ -51,7 +51,7 @@ dependencies {
     implementation ("io.reactivex.rxjava3:rxjava:3.0.13")
     //RxJava 与 Android 绑定需要的库，⾥⾯有调度类，允许我们与安卓的线程结合达到切换线程⽬的
     implementation ("io.reactivex.rxjava3:rxandroid:3.0.0")
-
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.viewpager2:viewpager2:1.1.0")
     implementation("androidx.appcompat:appcompat:1.7.0")

@@ -5,6 +5,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.sanhuzhen.openeye.adapter.ViewPaperAdapter
 import com.sanhuzhen.openeye.base.BaseFragment
 import com.sanhuzhen.openeye.databinding.FragmentHomeBinding
+import com.sanhuzhen.openeye.ui.activity.CategoryListActivity
 import com.sanhuzhen.openeye.ui.activity.SearchActivity
 import com.sanhuzhen.openeye.ui.fragment.home.DailyFragment
 import com.sanhuzhen.openeye.ui.fragment.home.RecommendFragment
@@ -39,6 +40,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         //使一打开在RecommendFragment中显示
         binding.tabHome.getTabAt(1)?.select()
 
+        binding.menuHome.setOnClickListener {
+            startActivity(Intent(this.requireContext(),CategoryListActivity::class.java))
+        }
 
         binding.searchHome.setOnClickListener {
             startActivity(Intent(this.requireContext(),SearchActivity::class.java))
