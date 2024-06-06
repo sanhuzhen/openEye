@@ -3,6 +3,7 @@ package com.sanhuzhen.openeye.network
 import com.sanhuzhen.openeye.api.ApiService
 import com.sanhuzhen.openeye.bean.Data
 import com.sanhuzhen.openeye.bean.Item
+import com.sanhuzhen.openeye.bean.ListData
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -13,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitRequest {
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("http://baobab.kaiyanapp.com/api/v3/")
+        .baseUrl("http://baobab.kaiyanapp.com/api/")
         //这里添加Gson的converter
         .addConverterFactory(GsonConverterFactory.create())
         //这里添加加 callAdapter把 call 转换成 Observable
@@ -32,7 +33,7 @@ object RetrofitRequest {
     /**
      * 对分类列表进行网络请求
      */
-    fun getCategoryList(): Observable<List<Data>> {
+    fun getCategoryList(): Observable<ListData> {
         return apiService.getCategoryList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

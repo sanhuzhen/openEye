@@ -5,18 +5,22 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sanhuzhen.openeye.bean.Data
 import com.sanhuzhen.openeye.bean.Item
+import com.sanhuzhen.openeye.bean.ListData
 import com.sanhuzhen.openeye.network.RetrofitRequest
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 
 class CategoryListViewModel: ViewModel() {
-    private var _CategoryList: MutableLiveData<List<Data>> = MutableLiveData()
+    private var _CategoryList: MutableLiveData<ListData> = MutableLiveData()
 
-    val CategoryList: MutableLiveData<List<Data>>
+    init {
+        getCategoryList()
+    }
+    val CategoryList: MutableLiveData<ListData>
         get() = _CategoryList
 
     fun getCategoryList() {
-        RetrofitRequest.getCategoryList().subscribe(object : Observer<List<Data>> {
+        RetrofitRequest.getCategoryList().subscribe(object : Observer<ListData> {
             override fun onSubscribe(d: Disposable) {
             }
             override fun onError(e: Throwable) {
@@ -24,7 +28,7 @@ class CategoryListViewModel: ViewModel() {
             }
             override fun onComplete() {
             }
-            override fun onNext(t: List<Data>) {
+            override fun onNext(t: ListData) {
                 Log.d("CategoryListViewModel","-------------    ${t}")
                _CategoryList.postValue(t)
            }

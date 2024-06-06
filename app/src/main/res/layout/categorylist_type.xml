@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="70dp">
 
     <ImageView
         android:id="@+id/categoryList_iv"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/ic_launcher_background"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -19,8 +19,8 @@
         android:layout_height="wrap_content"
         android:text="#生活"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="70dp"
         tools:ignore="MissingConstraints"
         android:textStyle="bold"/>
 
@@ -29,9 +29,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="匠心、健康、生活感悟"
+        android:layout_marginTop="33dp"
+        android:layout_marginLeft="70dp"
         android:textColor="@color/font_losecoupon"
-        tools:ignore="MissingConstraints"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="27dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        tools:ignore="MissingConstraints"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/bg_transparent"
+        android:layout_marginTop="60dp"/>
+</FrameLayout>

@@ -1,5 +1,6 @@
 package com.sanhuzhen.openeye.adapter
 
+import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -16,7 +17,7 @@ import com.sanhuzhen.openeye.bean.Data
 /**
  * 为分类列表的RecyclerView的适配器
  */
-class CategoryListRvAdapter : ListAdapter<Data, CategoryListRvAdapter.mViewHolder>(object :
+class CategoryListRvAdapter(private val context: Context) : ListAdapter<Data, CategoryListRvAdapter.mViewHolder>(object :
     DiffUtil.ItemCallback<Data>() {
     override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
         return oldItem.id == newItem.id
