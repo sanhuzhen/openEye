@@ -94,6 +94,9 @@ class MineFragment : BaseFragment<FragmentMineBinding>() {
 
     }
 
+    /**
+     * 实现用户头像，呢称等的持久化
+     */
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -111,6 +114,9 @@ class MineFragment : BaseFragment<FragmentMineBinding>() {
         }
     }
 
+    /**
+     * 保存图片
+     */
     private fun saveImage(uri: Uri) {
         try {
             val bitmap = MediaStore.Images.Media.getBitmap(requireContext().contentResolver, uri)
@@ -123,7 +129,9 @@ class MineFragment : BaseFragment<FragmentMineBinding>() {
             ToastUtils.ShortToast(requireContext(), "Failed to save image")
         }
     }
-
+    /**
+     * 加载图片
+     */
     private fun loadImage() {
         val fileName = "selected_image.jpg"
         try {
@@ -139,7 +147,9 @@ class MineFragment : BaseFragment<FragmentMineBinding>() {
             Toast.makeText(requireContext(), "Failed to load image", Toast.LENGTH_SHORT).show()
         }
     }
-
+    /**
+     * 显示弹窗
+     */
     @SuppressLint("CommitPrefEdits")
     private fun showAlertDialog(view: TextView, title: String) {
         val alertDialog = AlertDialog.Builder(requireContext())
