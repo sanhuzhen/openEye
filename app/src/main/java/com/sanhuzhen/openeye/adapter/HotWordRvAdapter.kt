@@ -1,5 +1,6 @@
 package com.sanhuzhen.openeye.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ class HotWordRvAdapter(context: Context):
 
         private var hotWords: List<String> = listOf()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(data: List<String>){
         hotWords = data
         notifyDataSetChanged()

@@ -4,6 +4,7 @@ import com.sanhuzhen.openeye.api.ApiService
 import com.sanhuzhen.openeye.bean.Data
 import com.sanhuzhen.openeye.bean.Item
 import com.sanhuzhen.openeye.bean.ListData
+import com.sanhuzhen.openeye.bean.NoticeData
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -35,6 +36,14 @@ object RetrofitRequest {
      */
     fun getCategoryList(): Observable<ListData> {
         return apiService.getCategoryList()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
+    /**
+     * 对通知内容进行网络请求
+     */
+    fun getNoticeData(): Observable<NoticeData> {
+        return apiService.getNoticeData()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
