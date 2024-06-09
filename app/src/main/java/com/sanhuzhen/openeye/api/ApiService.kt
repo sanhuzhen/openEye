@@ -1,5 +1,6 @@
 package com.sanhuzhen.openeye.api
 
+import com.sanhuzhen.openeye.bean.FollowData
 import com.sanhuzhen.openeye.bean.ListData
 import retrofit2.http.GET
 import io.reactivex.rxjava3.core.Observable
@@ -15,4 +16,10 @@ interface ApiService {
      */
     @GET("v5/category/list")
     fun getCategoryList(): Observable<ListData>
+
+    /**
+     * 获取关注内容
+     */
+    @GET("v5/community/tab/follow")
+    fun getFollowData(): Observable<FollowData>
 }

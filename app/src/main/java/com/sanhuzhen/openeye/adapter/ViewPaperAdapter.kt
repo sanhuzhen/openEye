@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.sanhuzhen.openeye.ui.fragment.HomeFragment
 
-class ViewPaperAdapter(fa: HomeFragment): FragmentStateAdapter(fa) {
+class ViewPaperAdapter(fa: Fragment): FragmentStateAdapter(fa) {
     private val fragmentList = arrayListOf<Fragment>()
     private val fragmentTitleList = arrayListOf<String>()
 
